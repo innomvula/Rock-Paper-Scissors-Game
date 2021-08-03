@@ -1,7 +1,6 @@
 from random import randint
 
-playagain = "y"
-while playagain == "y":
+def ropasc():
     rps = ['rock', 'paper', 'scissors']
     bestOf = int(input("best of: "))
     winscore = (bestOf//2) + 1
@@ -45,4 +44,19 @@ while playagain == "y":
         print("User1 is the winner!!")
     else:
         print("CP1 is the winner!!")
-    playagain = input("Play again (y/n)?: ")
+
+def ropasc_main():
+    playagain = True
+    gamecont = ["y", "n"]
+    while playagain == True:
+        ropasc()
+        while playagain == True:
+            newgame = input("Play again (y/n)?: ")
+            if newgame in gamecont and newgame == "n":
+                playagain = False
+            elif newgame in gamecont and newgame == "y":
+                break
+            else:
+                print("Wrong input! Enter 'y' or 'n'.")
+        print()
+#main()
